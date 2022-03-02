@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "b6b7a740-f0b4-4c57-8bcf-75fddbfb647a",
+		"name": "Help-offers API v1.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/cities",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Help-offer",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/offers?city=1&availablePlaces=2&withAnimals=false&invitePeriod=FIVE_DAYS&perPage=8&page=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"offers"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "1"
+								},
+								{
+									"key": "availablePlaces",
+									"value": "2"
+								},
+								{
+									"key": "withAnimals",
+									"value": "false"
+								},
+								{
+									"key": "invitePeriod",
+									"value": "FIVE_DAYS"
+								},
+								{
+									"key": "perPage",
+									"value": "8"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/offers/:offerId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"offers",
+								":offerId"
+							],
+							"variable": [
+								{
+									"key": "offerId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Pełne imię i nazwisko \": \"Tomasz Komak\",\r\n    \"Miejscowość\": \"Warsaw\",\r\n    \"Adres mieszkania \": \"Some address\",\r\n    \"Numer telefonu \": \"+48 555 222 111\",\r\n    \"Ile łóżek jest w mieszkaniu dla uchodźców? \": \"2\",\r\n    \"Czy można mieszkać ze zwierzętami? \": \"Nie\",\r\n    \"Jak długo są gotowi przyjąć uchodźcę? \": \"FIVE_DAYS\",\r\n    \"Osobiste komentarze \": \"description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/offers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"offers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
